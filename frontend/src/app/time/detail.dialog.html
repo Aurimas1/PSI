@@ -1,0 +1,15 @@
+<md-grid-list cols="10" rowHeight="400px">
+    <md-grid-tile colspan=3 rowspan=1>
+        <img [src]="data?.Foto" alt="Mokykla" width="400px" height="400px">
+    </md-grid-tile>
+    <md-grid-tile colspan=7 rowspan=1>
+        <md-list>
+            <md-list-item> Pavadinimas: {{data?.Name}} </md-list-item>
+            <md-list-item> Rajonas: {{data?.District}} </md-list-item>
+            <md-list-item> Adresas: {{data?.Address}} </md-list-item>
+            <md-list-item> Kontaktinis Numeris: {{data?.Number}} </md-list-item>
+            <md-list-item> Elektroninis Paštas: {{data?.Email}} </md-list-item>
+            <md-list-item> Valandos Kaina: 15Eurų </md-list-item>
+        </md-list>
+    </md-grid-tile>
+</md-grid-list>

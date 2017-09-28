@@ -1,0 +1,57 @@
+<md-form-field>
+    <input mdInput [mdDatepicker]="picker" [min]="minDate" [max]="maxDate" [(ngModel)]="selectedDate" placeholder="Pasirinkite data" (dateInput)="dataPicked($event)">
+    <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
+    <md-datepicker #picker></md-datepicker>
+</md-form-field>
+
+<md-select placeholder="Nuo kada" [(ngModel)]="selectedValue_start">
+  <md-option *ngFor="let time of times_start" value={{time}}>
+    {{time}}
+  </md-option>
+</md-select>
+
+<md-select placeholder="Iki kada" [(ngModel)]="selectedValue_end">
+  <md-option *ngFor="let time of times_end" value={{time}}>
+    {{time}}
+  </md-option>
+</md-select>
+
+<md-select placeholder="Rajonas" multiple="true" [(ngModel)]="selectedDistricts">
+  <md-option *ngFor="let value of districts" value={{value}}>
+    {{value}}
+  </md-option>
+</md-select>
+
+<md-select placeholder="Mokykla" multiple="true" [(ngModel)]="selectedSchools">
+  <md-option *ngFor="let value of schools" value={{value}}>
+    {{value}}
+  </md-option>
+</md-select>
+
+<div>
+  <button (click)="doSomething()">Filtruoti</button>
+</div>
+
+<div>
+    <md-table #table [dataSource]="dataSource">
+
+      <ng-container mdColumnDef="Name">
+        <md-header-cell *mdHeaderCellDef> Pavadinimas </md-header-cell>
+        <md-cell *mdCellDef="let element"> {{element.Name}} </md-cell>
+      </ng-container>
+  
+      <ng-container mdColumnDef="District">
+        <md-header-cell *mdHeaderCellDef> Rajonas </md-header-cell>
+        <md-cell *mdCellDef="let element"> {{element.District}} </md-cell>
+      </ng-container>
+  
+
+      <ng-container mdColumnDef="Address">
+        <md-header-cell *mdHeaderCellDef> Adresas </md-header-cell>
+        <md-cell *mdCellDef="let element"> {{element.Address}} </md-cell>
+      </ng-container>
+  
+      <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+      <md-row *mdRowDef="let row; columns: displayedColumns;" (click)="doSomethingMore(row)"></md-row>
+    </md-table>
+  </div>
