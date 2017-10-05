@@ -19,7 +19,7 @@ namespace School.Api.Controllers
             return repository.GetSchoolsBy(date,name?.Split(','), district?.Split(','));
         }
 
-        // GET api/values/5
+        /*// GET api/values/5
         public string Get(int id)
         {
             return "value";
@@ -38,6 +38,6 @@ namespace School.Api.Controllers
         // DELETE api/values/5
         public void Delete(int id)
         {
-        }
+        }*/
     }
 }

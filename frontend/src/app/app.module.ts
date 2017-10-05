@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 
 import { TimeModule } from './time/time.module';
 import { DisplayComponent } from './display';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DisplayComponent
+    DisplayComponent,
+    LoginComponent
   ],
   imports: [
     TimeModule,
