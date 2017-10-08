@@ -1,6 +1,6 @@
-<div style="width: 100%; background-color: white;">
-    <p style="right: 0;">Hi Admin</p>
-</div>
-
+<nav class='navbar navbar-default'*ngIf="auth.username">
+    <div class='container-fluid'>
+        <a class='navbar-brand'>Hi {{auth.username}}</a>
+    </div>
+</nav>
 <router-outlet></router-outlet>
-

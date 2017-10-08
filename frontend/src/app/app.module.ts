@@ -9,6 +9,10 @@ import { TimeModule } from './time/time.module';
 import { DisplayComponent } from './display';
 import { LoginComponent } from './login/login.component';
 
+import { AuthGuard } from './services/auth.guard'
+import { AuthService } from './services/auth.service'
+import { StorageService } from './services/storage.service'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +25,11 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     SuperMaterial
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    AuthService,
+    StorageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
