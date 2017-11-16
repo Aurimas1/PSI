@@ -1,14 +1,14 @@
-import { Injectable } from '@angular/core'
+import { Injectable } from '@angular/core';
 
 @Injectable()
-export class StorageService{
+export class StorageService {
     public get(name: string): string {
-        return window.localStorage.getItem(name);
+        return sessionStorage.getItem(name);
     }
-    public set(name: string, value: string): void{
-        window.localStorage.setItem(name, value);
+    public set(name: string, value: string): void {
+        sessionStorage.setItem(name, value);
     }
     public delete(name: string): void {
-        window.localStorage.removeItem(name);
+        sessionStorage.removeItem(name);
     }
 }

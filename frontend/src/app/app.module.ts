@@ -8,16 +8,18 @@ import { AppComponent } from './app.component';
 import { TimeModule } from './time/time.module';
 import { DisplayComponent } from './display';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
-import { AuthGuard } from './services/auth.guard'
-import { AuthService } from './services/auth.service'
-import { StorageService } from './services/storage.service'
+import { AuthGuard } from './services/auth.guard';
+import { AuthService } from './services/auth.service';
+import { StorageService } from './services/storage.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     DisplayComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     TimeModule,

@@ -1,9 +1,11 @@
-<md-form-field>
-    <input mdInput placeholder="Vartotojo vardas" [(ngModel)]="username">
-</md-form-field>
-<br/>
-<md-form-field>
-    <input mdInput type="password" placeholder="Slaptažodis" [(ngModel)]="password">
-</md-form-field>
-<br/>
-<button md-raised-button color="primary" (click)="login()">Prisijungti</button>
+<div class="centerLogin">
+    <md-form-field>
+        <input mdInput placeholder="Vartotojo vardas" [(ngModel)]="username">
+    </md-form-field>
+    <br/>
+    <md-form-field>
+        <input mdInput type="password" placeholder="Slaptažodis" [(ngModel)]="password">
+    </md-form-field>
+    <br/>
+    <button md-raised-button color="primary" (click)="login()">Prisijungti</button>
+</div>

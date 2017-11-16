@@ -1,28 +1,28 @@
-import { Component } from '@angular/core'
-import { AuthService } from '../services/auth.service'
-import { Router } from '@angular/router'
+import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
     selector: 'psi-login',
-    templateUrl: './login.component.html'
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css']
 })
-export class LoginComponent{
-    username: string = '';
-    password: string = '';
-    
-    constructor(private authServise: AuthService, private router: Router){ }
+export class LoginComponent {
+    username = '';
+    password = '';
 
-    login(){
-        if (this.username === ''){
+    constructor(private authServise: AuthService, private router: Router) { }
+
+    @HostListener('document:keydown.enter')
+    login() {
+        if (this.username === '') {
             alert('Blogas vartotojo vardas');
             return;
         }
-        if (this.password === ''){
+        if (this.password === '') {
             alert('Blogas slaptazodis');
             return;
         }
-        this.authServise.username = this.username;
-        this.router.navigate(['']);
-
+        this.authServise.auth(this.username, this.password).subscribe(() => this.router.navigate(['']), err => alert(err.json().Message));
     }
 }

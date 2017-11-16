@@ -65,9 +65,7 @@ export class MyDataSource extends DataSource<any>{
     }
 
     connect(): Observable<ISchool[]> {
-        if (this.date === null || this.date === undefined)
-            return this.repositoryService.getSchoolsBy(new Date());
-        return this.repositoryService.getSchoolsBy(this.date, this.startTime, this.endTime, this.districts, this.schools);
+        return this.repositoryService.getSchoolsBy(this.districts, this.schools);
     }
     
     disconnect(): void {    }

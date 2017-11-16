@@ -52,6 +52,6 @@
       </ng-container>
   
       <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
-      <md-row *mdRowDef="let row; columns: displayedColumns;" (click)="doSomethingMore(row)"></md-row>
+      <md-row style="cursor: pointer;" *mdRowDef="let row; columns: displayedColumns;" (click)="doSomethingMore(row)"></md-row>
     </md-table>
   </div>

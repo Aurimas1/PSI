@@ -7,17 +7,12 @@ namespace API.Controllers
     public class SchoolsController : ApiController
     {
         // GET api/values
-        public IEnumerable<ISchool> Get()
+        public IEnumerable<ISchool> Get(string district = null, string name = null)
         {
-            var repository = new Repository.Repository();
-            return repository.GetSchoolList();
-        }
-
-        // GET api/values
-        public IEnumerable<ISchool> Get(string date, string district = null, string name = null, string from = null, string till = null)
-        {
-            var repository = new Repository.Repository();
-            return repository.GetSchoolsBy(date, name?.Split(','), district?.Split(','));
+            var repository = new Repository.Repository(System.Web.Hosting.HostingEnvironment.MapPath(@"~/App_Data/Schools.csv"));
+            if (district == null && name == null)
+                return repository.GetSchoolList();
+            return repository.GetSchoolsBy(name?.Split(','), district?.Split(','));
         }
     }
 }
