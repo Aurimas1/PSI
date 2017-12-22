@@ -1,7 +1,7 @@
-import { Component } from '@angular/core'
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'psi-display',
     templateUrl: './display.component.html'
 })
-export class DisplayComponent{}
+export class DisplayComponent {}
