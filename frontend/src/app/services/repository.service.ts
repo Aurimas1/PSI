@@ -61,4 +61,5 @@ export interface ISchool {
     Name: string;
     District: string;
     Address: string;
+    Foto?: string;
 }
